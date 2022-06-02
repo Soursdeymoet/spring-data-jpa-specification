@@ -14,7 +14,7 @@ public class StudentSpecification {
 	 * @param id
 	 * @return specification
 	 */
-	public Specification<StudentEntity> idEqual(Integer id) {
+	public static Specification<StudentEntity> idEqual(Integer id) {
 		
 		if (Objects.isNull(id)) return null;
 		
@@ -27,7 +27,7 @@ public class StudentSpecification {
 	 * @param studentId
 	 * @return specification
 	 */
-	public Specification<StudentEntity> studentIdEqual(String studentId) {
+	public static Specification<StudentEntity> studentIdEqual(String studentId) {
 		
 		if (Objects.isNull(studentId)) return null;
 		

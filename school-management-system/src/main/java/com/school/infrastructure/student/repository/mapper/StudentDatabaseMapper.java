@@ -14,7 +14,7 @@ public interface StudentDatabaseMapper {
 	 * @param entity student entity
 	 * @return result
 	 */
-	default StudentResult From(StudentEntity entity) {
+	default StudentResult from(StudentEntity entity) {
 
 		return StudentResult.builder().id(entity.getId()).studentId(entity.getStId())
 				.studentFirstName(entity.getStFirstName()).studentLastName(entity.getStLastName())
