@@ -1,11 +1,12 @@
 package com.school.infrastructure.student.repository.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
 import com.school.core.student.model.result.StudentResult;
 import com.school.infrastructure.student.database.entity.StudentEntity;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface StudentDatabaseMapper {
 
 	/**
