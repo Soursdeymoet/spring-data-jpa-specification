@@ -6,9 +6,11 @@ import org.springframework.stereotype.Service;
 
 import com.school.core.student.mapper.StudentCoreMapper;
 import com.school.core.student.model.command.StudentGetCommand;
+import com.school.core.student.model.command.StudentListCommand;
+import com.school.core.student.model.reply.StudentListReply;
 import com.school.core.student.model.reply.StudentReply;
 import com.school.core.student.port.incoming.StudentService;
-import com.school.core.student.port.outgoing.StudentProvider;
+import com.school.core.student.port.outgoing.StudentProvider; 
 
 import lombok.RequiredArgsConstructor;
 
@@ -27,6 +29,21 @@ public class StudentFacade implements StudentService {
 	 */
 	@Override
 	public Optional<StudentReply> handle(StudentGetCommand command) {
+		// TODO Auto-generated method stub
+		return Optional.of(command)
+				.map(mapper::from)
+				.flatMap(provider::handle)
+				.map(mapper::from);
+	}
+
+	/**
+	 * get student list by class id
+	 * 
+	 * @param command
+	 * @return reply
+	 */
+	@Override
+	public Optional<StudentListReply> handle(StudentListCommand command) {
 		// TODO Auto-generated method stub
 		return Optional.of(command)
 				.map(mapper::from)

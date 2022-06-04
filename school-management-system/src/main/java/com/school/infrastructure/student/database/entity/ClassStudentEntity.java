@@ -13,37 +13,28 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tb_student")
-public class StudentEntity {
+@Table(name = "tb_class_student")
+public class ClassStudentEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	
+	/**
+	 * primary key column
+	 */
 	@Column(name = "st_id")
-	private String stId;
+	private Integer stId;
 	
-	@Column(name = "st_first_name")
-	private String stFirstName;
+	@Column(name = "class_id")
+	private Integer clId;
 	
-	@Column(name = "st_last_name")
-	private String stLastName;
-	
-	@Column(name = "st_email")
-	private String stEmail;
-	
-	@Column(name = "st_gener")
-	private String stGender;
-	
-	@Column(name = "st_date_of_birth")
-	private String stDateOfBirth;
+	@Column(name = "status")
+	private Boolean status;
 	
 	@Column(name = "created_at")
 	private LocalDateTime createdAt;
 	
 	@Column(name = "updated_at")
 	private LocalDateTime updatedAt;
-	
-	@Column(name = "status")
-	private Boolean status;
 }

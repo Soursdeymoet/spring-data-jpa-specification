@@ -5,6 +5,8 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.school.core.student.model.query.StudentGetQuery;
+import com.school.core.student.model.query.StudentListQuery;
+import com.school.core.student.model.result.StudentListResult;
 import com.school.core.student.model.result.StudentResult;
 import com.school.core.student.port.outgoing.StudentProvider;
 import com.school.infrastructure.student.repository.StudentBaseRepository;
@@ -25,6 +27,18 @@ public class StudentAdapter implements StudentProvider {
 	 */
 	@Override
 	public Optional<StudentResult> handle(StudentGetQuery query) {
+		// TODO Auto-generated method stub
+		return repository.handle(query);
+	}
+
+	/**
+	 * get list of student by class id
+	 * 
+	 * @param query
+	 * @return result 
+	 */
+	@Override
+	public Optional<StudentListResult> handle(StudentListQuery query) {
 		// TODO Auto-generated method stub
 		return repository.handle(query);
 	}

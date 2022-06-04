@@ -1,5 +1,6 @@
 package com.school.infrastructure.student.database.specification;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.jpa.domain.Specification;
@@ -32,5 +33,18 @@ public class StudentSpecification {
 		if (Objects.isNull(studentId)) return null;
 		
 		return (root, query, builder) -> builder.equal(builder.lower(root.get("stId")), studentId.toLowerCase());
+	}
+	
+	/**
+	 * get student by list of id
+	 * 
+	 * @param ids
+	 * @return specification
+	 */
+	public static Specification<StudentEntity> idIn(List<Integer> ids) {
+		
+		if (ids.isEmpty()) return  null;
+		
+		return (root, query, builder) -> root.get("id").in(ids);
 	}
 }

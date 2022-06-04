@@ -20,4 +20,6 @@ public class StudentResult {
 	private String studentGender;
 
 	private String studentDateOfBirth;
+	
+	private Boolean status;
 }
