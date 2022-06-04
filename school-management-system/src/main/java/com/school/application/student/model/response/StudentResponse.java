@@ -1,12 +1,12 @@
-package com.school.core.student.model.reply;
+package com.school.application.student.model.response;
 
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
-public class StudentReply {
-	
+public class StudentResponse {
+
 	private Integer id;
 
 	private String studentId;

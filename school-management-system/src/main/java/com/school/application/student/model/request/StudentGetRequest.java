@@ -1,12 +1,11 @@
-package com.school.core.student.model.command;
-
+package com.school.application.student.model.request;
 
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
-public class StudentGetCommand {
-	
+public class StudentGetRequest {
+
 	private String studentId;
 }
